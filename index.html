@@ -1,0 +1,57 @@
+# Query: 
+# ContextLines: 1
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafetyBand Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; display: flex; height: 100vh; }
+        
+        /* Sidebar for Child List */
+        .sidebar { width: 300px; background: white; border-right: 2px solid #ddd; padding: 20px; overflow-y: auto; }
+        
+        /* Map Area */
+        .map-container { flex-grow: 1; padding: 20px; background: #e5e5f7; display: flex; align-items: center; justify-content: center; }
+        .fake-map { width: 100%; height: 100%; background: white; border-radius: 15px; border: 2px solid #ccc; display: flex; align-items: center; justify-content: center; color: #888; }
+
+        /* Child Status Cards */
+        .card { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .status-safe { color: green; font-weight: bold; }
+        .status-danger { color: red; font-weight: bold; animation: blinker 1s linear infinite; }
+        
+        /* The Emergency Button */
+        .btn-buzzer { background: #ff4757; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; }
+        
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>🛡️ SafetyBand</h2>
+        <hr>
+        
+        <div class="card">
+            <h3>Child: Alice</h3>
+            <p>Status: <span class="status-safe">● I'm Safe</span></p>
+            <p>Battery: 85%</p>
+            <button class="btn-buzzer">🚨 Trigger Buzzer</button>
+        </div>
+
+        <div class="card">
+            <h3>Child: Bob</h3>
+            <p>Status: <span class="status-danger">⚠️ SOS - Not Safe!</span></p>
+            <p>Location: Zone B (Outside Fence)</p>
+            <button class="btn-buzzer">🚨 Trigger Buzzer</button>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <div class="fake-map">
+            <h2>GPS Map View (Google Maps API goes here)</h2>
+        </div>
+    </div>
+
+</body>
+</html>
